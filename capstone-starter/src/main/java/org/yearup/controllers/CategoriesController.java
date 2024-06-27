@@ -44,7 +44,7 @@ public class CategoriesController
     public List<Product> getProductsById(@PathVariable int categoryId)
     {
         // get a list of product by categoryId
-        return (List<Product>) productDao.getById(categoryId);
+        return productDao.listByCategoryId(categoryId);
     }
     @PostMapping
     @PreAuthorize("hasRole('ROLE_ADMIN')") //was going to use @Secured
